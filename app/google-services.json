@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "716947033270",
+    "project_id": "nb22-academia",
+    "storage_bucket": "nb22-academia.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:716947033270:android:3dcc3a3a5a4e73c9e9ea17",
+        "android_client_info": {
+          "package_name": "dev.rulsoft.nb22"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMnYQdgkzjqs9i54Ml2go_4_BRWOJCw5Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

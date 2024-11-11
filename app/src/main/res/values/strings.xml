@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">NB22</string>
+    <string name="toolbar_title">Numerología Base 22</string>
+    <string name="home">Home</string>
+    <string name="precarta">Carta NB22</string>
+    <string name="terapeutas">Terapeutas</string>
+
+    <!-- Errores -->
+    <string name="generic_error">Error genérico</string>
+    <string name="errors_no_cuentas_google">Es necesario tener al menos una cuenta de google en el terminal</string>
+    <string name="errors_no_alta_usuario">Error al dar de alta el usuario</string>
+    <string name="errors_no_usuario_aux">No sea seleccionado una cuenta google</string>
+    <string name="errors_no_hay_conexion">Sin conexión a internet</string>
+
+    <string name="errors_validad_passwords">Las contraseñas no coinciden</string>
+
+    <string name="errors_validad_fecha_carta">Es necesario seleccionar una fecha</string>
+
+    <string name="errors_no_alta_carta">Error al registrar la carta</string>
+
+    <string name="errors_codigo_required">Es obligatorio informar el código de cliente que te ha facilitado tu numerólogo</string>
+    <string name="errors_email_required">Es obligatorio informar el email que diste a tu terapeuta</string>
+    <string name="errors_fecha_required">Es obligatorio informar la fecha de nacimiento</string>
+    <string name="bottom_back">Volver</string>
+    <string name="sin_title" />
+    <string name="terapeuta">Terapeuta</string>
+    <string name="curso">Curso</string>
+    <string name="mi_carta">Mi carta natal</string>
+    <string name="carta_free">Mi Personalidad Profunda</string>
+    <string name="mas_info_pp">Si deseas obtener más información sobre tu personalidad profunda y los demás pilares que te ayudarán en tu camino hacia el autoconocimiento, puedes solicitar una lectura completa con alguno de nuestros numerólogos o numerólogas.</string>
+    <string name="definicion_pp">Si todavía no has realizado ninguna sesión del lectura de tu carta con ninguno de nuestros numerólogos, introduce a continuación tu fecha y te calcularemos tu Personalidad Profunda. El Pilar de la Personalidad Profunda nos revela nuestra Esencia, lo que hemos venido a Ser o cual es nuestro Propósito de vida, así como los dones y talentos que nos acompañarán y nos apoyarán en el camino hacia nuestra mejor versión. En definitiva, la Personalidad Profunda nos brinda una valiosa oportunidad de autoconocimiento y toma de consciencia.</string>
+    <string name="bottom_send">Compartir</string>
+    <string name="carta_not_found">En estos momentos no tienes ninguna carta registrada, si ya has realizado tu sesión ponte en contacto con tu Numerólogo/a. \nSi no has realizado todavía una sesión de lectura de Carta, puedes solicitar una sesión con cualquiera de nuestros profesionales.</string>
+    <string name="usuario_not_found">La dirección de email no es correcta o si es correcta ponte en contacto con tu Numerólogo/a.</string>
+    <string name="unknown_error">Error inesperado.</string>
+    <string name="vacio" />
+    <string name="fab_share">Compartir</string>
+</resources>
