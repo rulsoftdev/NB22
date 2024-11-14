@@ -1,16 +1,11 @@
 package dev.rulsoft.nb22.presentation.carta
 
-import android.util.Log
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.setValue
 import androidx.lifecycle.viewModelScope
 import dev.rulsoft.nb22.R
-import dev.rulsoft.nb22.common.domain.UnknownApiError
 import dev.rulsoft.nb22.common.logger.CrashlyticsLogger
 import dev.rulsoft.nb22.common.presentation.NB22ViewModel
-import dev.rulsoft.nb22.domain.usuario.usecase.UserCheckAndLoadCartasUseCase
 import dev.rulsoft.nb22.domain.usuario.UsuarioLocalRepository
+import dev.rulsoft.nb22.domain.usuario.usecase.UserCheckAndLoadCartasUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -51,7 +46,7 @@ class PreCartaViewModel (
     fun saveUsuario(email: String, recordarEmail: Boolean = false){
         viewModelScope.launch {
             _state.value = PreCartaUIState.Loading // Indicamos que la carga está en progreso
-            val result = userCheckAndLoadCartaUseCase.execute(email, recordarEmail)
+            val result = userCheckAndLoadCartaUseCase.invoke(email, recordarEmail)
 
             when (result) {
                 is UserCheckAndLoadCartasUseCase.Result.UserNotFound -> {
