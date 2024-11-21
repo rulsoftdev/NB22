@@ -2,16 +2,17 @@ package dev.rulsoft.nb22.di
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.room.Room
-import dev.rulsoft.nb22.common.data.database.NB22Database
-import dev.rulsoft.nb22.common.data.networking.ApiClientKtor
-import dev.rulsoft.nb22.common.logger.CrashlyticsLogger
-import dev.rulsoft.nb22.common.logger.impl.FirebaseCrashlyticsLogger
+import dev.rulsoft.nb22.data.common.database.NB22Database
+import dev.rulsoft.nb22.data.common.networking.ApiClientKtor
+import dev.rulsoft.nb22.core.logger.CrashlyticsLogger
+import dev.rulsoft.nb22.core.logger.impl.FirebaseCrashlyticsLogger
 import dev.rulsoft.nb22.data.carta.database.CartaLocalDataRepository
 import dev.rulsoft.nb22.data.carta.networking.CartaRemoteDataRemoteRepository
 import dev.rulsoft.nb22.data.carta.networking.CartaServiceKtor
-import dev.rulsoft.nb22.data.curso.networking.CursoRemoteDataRemoteRepository
+import dev.rulsoft.nb22.data.common.networking.BaseServiceKtor
+import dev.rulsoft.nb22.data.curso.networking.CursoRemoteDataRepository
 import dev.rulsoft.nb22.data.curso.networking.CursoServiceKtor
-import dev.rulsoft.nb22.data.numero.networking.NumeroRemoteDataRemoteRepository
+import dev.rulsoft.nb22.data.numero.networking.NumeroRemoteDataRepository
 import dev.rulsoft.nb22.data.numero.networking.NumeroServiceKtor
 import dev.rulsoft.nb22.data.terapeuta.networking.TerapeutaRemoteDataRepository
 import dev.rulsoft.nb22.data.terapeuta.networking.TerapeutaServiceKtor
@@ -39,7 +40,7 @@ import org.koin.dsl.module
 val appModule = module {
 
     // Ktor ApiClient
-    single { ApiClientKtor.httpClient }
+    single { ApiClientKtor }
 
     // Proveer la instancia de la base de datos
     single {
@@ -55,6 +56,7 @@ val appModule = module {
     // Proporciona la implementación de LogService
     single<CrashlyticsLogger> { FirebaseCrashlyticsLogger() }
 
+    single<BaseServiceKtor> { BaseServiceKtor(get()) }
     // Proveedores Remotos de API-Ktor
     single<UsuarioServiceKtor> { UsuarioServiceKtor(get()) }
     single<CartaServiceKtor> { CartaServiceKtor(get())}
@@ -73,8 +75,8 @@ val appModule = module {
     // Proveemos los remote Repository
     single<UsuarioRemoteRepository> { UsuarioRemoteDataRepository(get()) }
     single<CartaRemoteRepository> { CartaRemoteDataRemoteRepository(get()) }
-    single<CursoRemoteRepository> { CursoRemoteDataRemoteRepository(get()) }
-    single<NumeroRemoteRepository> { NumeroRemoteDataRemoteRepository(get()) }
+    single<CursoRemoteRepository> { CursoRemoteDataRepository(get()) }
+    single<NumeroRemoteRepository> { NumeroRemoteDataRepository(get()) }
     single<TerapeutaRepository> { TerapeutaRemoteDataRepository(get()) }
 
     // Proveemos Casos de Uso

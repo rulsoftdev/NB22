@@ -1,7 +1,7 @@
 package dev.rulsoft.nb22.domain.carta
 
 import arrow.core.Either
-import dev.rulsoft.nb22.common.domain.ApiError
+import dev.rulsoft.nb22.core.ApiError
 import dev.rulsoft.nb22.domain.carta.model.Carta
 import dev.rulsoft.nb22.domain.carta.model.CartaSimple
 

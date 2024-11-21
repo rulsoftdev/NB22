@@ -1,8 +1,8 @@
 package dev.rulsoft.nb22.data.carta.networking
 
 import arrow.core.Either
-import dev.rulsoft.nb22.common.data.networking.BaseRemoteDataRepository
-import dev.rulsoft.nb22.common.domain.ApiError
+import dev.rulsoft.nb22.data.common.networking.BaseRemoteDataRepository
+import dev.rulsoft.nb22.core.ApiError
 import dev.rulsoft.nb22.data.carta.mappers.toCarta
 import dev.rulsoft.nb22.data.carta.mappers.toCartaSimple
 import dev.rulsoft.nb22.data.carta.networking.dto.CartaUpdateDto

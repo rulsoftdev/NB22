@@ -16,8 +16,8 @@ import androidx.compose.ui.graphics.drawscope.drawIntoCanvas
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import dev.rulsoft.nb22.core.WindowSize
-import dev.rulsoft.nb22.core.WindowType
+import dev.rulsoft.nb22.presentation.WindowSize
+import dev.rulsoft.nb22.presentation.WindowType
 import dev.rulsoft.nb22.data.types.Figura
 import dev.rulsoft.nb22.data.types.TipoCarta
 import dev.rulsoft.nb22.presentation.carta.CartaUI

@@ -44,7 +44,7 @@ import androidx.core.text.HtmlCompat
 import coil.compose.rememberAsyncImagePainter
 import coil.request.ImageRequest
 import dev.rulsoft.nb22.R
-import dev.rulsoft.nb22.common.data.util.ApiConstants
+import dev.rulsoft.nb22.data.common.util.ApiConstants
 import dev.rulsoft.nb22.domain.terapeuta.model.Terapeuta
 import dev.rulsoft.nb22.presentation.terapeuta.composable.TerapeutaCard
 import org.koin.androidx.compose.koinViewModel

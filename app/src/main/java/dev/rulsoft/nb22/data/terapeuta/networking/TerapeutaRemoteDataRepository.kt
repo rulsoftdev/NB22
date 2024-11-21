@@ -1,8 +1,8 @@
 package dev.rulsoft.nb22.data.terapeuta.networking
 
 import arrow.core.Either
-import dev.rulsoft.nb22.common.data.networking.BaseRemoteDataRepository
-import dev.rulsoft.nb22.common.domain.ApiError
+import dev.rulsoft.nb22.data.common.networking.BaseRemoteDataRepository
+import dev.rulsoft.nb22.core.ApiError
 import dev.rulsoft.nb22.domain.terapeuta.model.Terapeuta
 import dev.rulsoft.nb22.data.terapeuta.mappers.toTerapeuta
 import dev.rulsoft.nb22.domain.terapeuta.TerapeutaRepository

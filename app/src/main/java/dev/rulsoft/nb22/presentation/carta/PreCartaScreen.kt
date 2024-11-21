@@ -34,10 +34,10 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import dev.rulsoft.nb22.R
-import dev.rulsoft.nb22.common.presentation.composable.button.ButtonMain
-import dev.rulsoft.nb22.common.presentation.composable.button.ButtonSecondary
-import dev.rulsoft.nb22.common.presentation.composable.picker.ShowDatePicker
-import dev.rulsoft.nb22.common.presentation.composable.text.TransparentTextField
+import dev.rulsoft.nb22.presentation.common.composable.button.ButtonMain
+import dev.rulsoft.nb22.presentation.common.composable.button.ButtonSecondary
+import dev.rulsoft.nb22.presentation.common.composable.picker.ShowDatePicker
+import dev.rulsoft.nb22.presentation.common.composable.text.TransparentTextField
 import dev.rulsoft.nb22.presentation.carta.holder.rememberPreCartaStateHolder
 import org.koin.androidx.compose.koinViewModel
 

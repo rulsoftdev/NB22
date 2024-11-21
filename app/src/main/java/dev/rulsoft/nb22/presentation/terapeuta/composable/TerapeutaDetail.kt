@@ -28,7 +28,7 @@ import androidx.compose.ui.unit.dp
 import coil.compose.rememberAsyncImagePainter
 import coil.request.ImageRequest
 import dev.rulsoft.nb22.R
-import dev.rulsoft.nb22.common.data.util.ApiConstants
+import dev.rulsoft.nb22.data.common.util.ApiConstants
 import dev.rulsoft.nb22.presentation.terapeuta.models.TerapeutaUi
 import java.util.Date
 
