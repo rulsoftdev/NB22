@@ -1,6 +1,6 @@
 package dev.rulsoft.nb22.data.carta.networking.dto
 
-import dev.rulsoft.nb22.common.data.networking.serializers.DateSerializer
+import dev.rulsoft.nb22.data.common.networking.serializers.DateSerializer
 import dev.rulsoft.nb22.data.types.TipoCarta
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

@@ -2,8 +2,8 @@ package dev.rulsoft.nb22.presentation.carta
 
 import androidx.lifecycle.viewModelScope
 import dev.rulsoft.nb22.R
-import dev.rulsoft.nb22.common.logger.CrashlyticsLogger
-import dev.rulsoft.nb22.common.presentation.NB22ViewModel
+import dev.rulsoft.nb22.core.logger.CrashlyticsLogger
+import dev.rulsoft.nb22.presentation.common.NB22ViewModel
 import dev.rulsoft.nb22.domain.usuario.UsuarioLocalRepository
 import dev.rulsoft.nb22.domain.usuario.usecase.UserCheckAndLoadCartasUseCase
 import kotlinx.coroutines.flow.MutableStateFlow

@@ -3,7 +3,7 @@ package dev.rulsoft.nb22.presentation.carta.composable
 import androidx.compose.ui.graphics.Canvas
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.nativeCanvas
-import dev.rulsoft.nb22.core.WindowSize
+import dev.rulsoft.nb22.presentation.WindowSize
 import dev.rulsoft.nb22.data.types.TipoCarta
 import dev.rulsoft.nb22.data.types.TipoPaint
 import dev.rulsoft.nb22.presentation.carta.CartaUI

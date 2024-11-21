@@ -2,7 +2,7 @@ package dev.rulsoft.nb22.presentation.carta
 
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
-import dev.rulsoft.nb22.common.presentation.utils.UiText
+import dev.rulsoft.nb22.presentation.common.utils.UiText
 import dev.rulsoft.nb22.data.carta.networking.dto.CartaDto
 import dev.rulsoft.nb22.data.carta.networking.dto.CartaSimpleDto
 import dev.rulsoft.nb22.data.types.Figura

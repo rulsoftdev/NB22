@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material.icons.filled.Share
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -20,7 +19,6 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedCard
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.ExperimentalComposeApi
@@ -34,12 +32,11 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import dev.rulsoft.nb22.R
-import dev.rulsoft.nb22.common.presentation.composable.picker.ShowDatePicker
-import dev.rulsoft.nb22.common.presentation.utils.onResourceReady
-import dev.rulsoft.nb22.core.rememberWindowSize
+import dev.rulsoft.nb22.presentation.common.composable.picker.ShowDatePicker
+import dev.rulsoft.nb22.presentation.common.utils.onResourceReady
+import dev.rulsoft.nb22.presentation.rememberWindowSize
 import dev.rulsoft.nb22.presentation.carta.composable.PPCanvaFree
 import dev.rulsoft.nb22.presentation.carta.composable.getEtiqueta
-import dev.rulsoft.nb22.presentation.carta.holder.rememberCapturerStateHolder
 import dev.shreyaspatil.capturable.capturable
 import dev.shreyaspatil.capturable.controller.CaptureController
 import dev.shreyaspatil.capturable.controller.rememberCaptureController

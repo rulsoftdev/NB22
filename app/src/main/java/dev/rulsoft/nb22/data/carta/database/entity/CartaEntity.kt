@@ -2,10 +2,7 @@ package dev.rulsoft.nb22.data.carta.database.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import dev.rulsoft.nb22.common.data.networking.serializers.DateSerializer
 import dev.rulsoft.nb22.data.types.TipoCarta
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
 import java.util.Date
 
 @Entity(tableName = "carta")

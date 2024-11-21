@@ -9,11 +9,10 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
-import dev.rulsoft.nb22.common.data.util.Resource
-import dev.rulsoft.nb22.common.logger.CrashlyticsLogger
-import dev.rulsoft.nb22.common.presentation.NB22ViewModel
-import dev.rulsoft.nb22.core.WindowSize
-import dev.rulsoft.nb22.core.WindowType
+import dev.rulsoft.nb22.core.logger.CrashlyticsLogger
+import dev.rulsoft.nb22.presentation.common.NB22ViewModel
+import dev.rulsoft.nb22.presentation.WindowSize
+import dev.rulsoft.nb22.presentation.WindowType
 import dev.rulsoft.nb22.data.types.Figura
 import dev.rulsoft.nb22.data.types.TipoCarta
 import dev.rulsoft.nb22.domain.carta.model.Carta
@@ -39,9 +38,9 @@ class CartaViewModel (
     private var _repeticionesNumeros: HashMap<Int, Int> = hashMapOf()
 
     init {
-        val id: String = savedStateHandle.get<String>("id")?: "0"
-        if (id.toInt() > 0) {
-            getCartaById(id.toInt())
+        val id: Int = savedStateHandle.get<Int>("id")?: 0
+        if (id > 0) {
+            getCartaById(id)
         } else {
             val showLista: Boolean = savedStateHandle.get<Boolean>("showLista") ?: false
             // Log.d("CartaViewModel", "showLista: $showLista")
@@ -49,8 +48,7 @@ class CartaViewModel (
             if (email.isNotBlank()) {
                 viewModelScope.launch {
                     if (showLista) {
-                        //TODO: descomentar cuando se añada el listado de cartas, si se requiere
-                        // getCartasList(email)
+                        getCartasList(email)
                     } else {
                         getCartaFijada(email)
                     }
@@ -124,6 +122,7 @@ class CartaViewModel (
                                 fecha = cartas[0].fecha,
                                 hora = cartas[0].hora,
                                 alias = cartas[0].alias,
+                                email = email,
                                 multipleCartas = cartas.size > 1
                             )
                         } else {
@@ -183,6 +182,7 @@ class CartaViewModel (
                             fecha = cartas[0].fecha,
                             hora = cartas[0].hora,
                             alias = cartas[0].alias,
+                            email = cartas[0].email,
                             multipleCartas = cartas.size > 1
                         )
                     }
@@ -221,7 +221,8 @@ class CartaViewModel (
                                 cartaNueva
                             }
                             state = state.copy(
-                                cartasList = cartasActualizadas
+                                cartasList = cartasActualizadas,
+                                email = email
                             )
                         }
                     }
@@ -341,10 +342,7 @@ class CartaViewModel (
     //TODO: descomentar cuando se añada el listado de cartas, si se requiere
     private fun onChangedCartaFijada(id: Int){
         viewModelScope.launch {
-            val resource = cartaRemoteRepository.updateCarta(id, true)
-            if (resource is Resource.Success<*>) {
-                Log.d("CartaViewModel", "Todo ok")
-            }
+            cartaRemoteRepository.updateCarta(id, true)
         }
     }
 

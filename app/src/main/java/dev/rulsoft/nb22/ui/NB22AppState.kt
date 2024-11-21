@@ -7,8 +7,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.ExperimentalComposeApi
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
-import androidx.compose.ui.graphics.asAndroidBitmap
-import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.NavDestination.Companion.hierarchy
@@ -16,15 +14,16 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import dev.rulsoft.nb22.R
-import dev.rulsoft.nb22.core.navigation.CartaFree
-import dev.rulsoft.nb22.core.navigation.Curso
-import dev.rulsoft.nb22.core.navigation.Home
-import dev.rulsoft.nb22.core.navigation.MiCarta
-import dev.rulsoft.nb22.core.navigation.NavItem
-import dev.rulsoft.nb22.core.navigation.PreCarta
-import dev.rulsoft.nb22.core.navigation.Terapeuta
-import dev.rulsoft.nb22.core.navigation.Terapeutas
-import dev.rulsoft.nb22.core.navigation.navigatePoppingUpToStartDestination
+import dev.rulsoft.nb22.presentation.navigation.CartaFree
+import dev.rulsoft.nb22.presentation.navigation.Cartas
+import dev.rulsoft.nb22.presentation.navigation.Curso
+import dev.rulsoft.nb22.presentation.navigation.Home
+import dev.rulsoft.nb22.presentation.navigation.MiCarta
+import dev.rulsoft.nb22.presentation.navigation.NavItem
+import dev.rulsoft.nb22.presentation.navigation.PreCarta
+import dev.rulsoft.nb22.presentation.navigation.Terapeuta
+import dev.rulsoft.nb22.presentation.navigation.Terapeutas
+import dev.rulsoft.nb22.presentation.navigation.navigatePoppingUpToStartDestination
 import dev.shreyaspatil.capturable.controller.CaptureController
 import dev.shreyaspatil.capturable.controller.rememberCaptureController
 import kotlinx.coroutines.CoroutineScope
@@ -51,7 +50,10 @@ class NB22AppState(
     companion object {
         val BOTTOM_NAV_OPTIONS: List<NavItem> = listOf(NavItem.HOME, NavItem.PRECARTA, NavItem.TERAPEUTAS)
         val BOTTOM_DESTINATIONS = listOf(Home, PreCarta, Terapeutas)
-        val UP_DESTINATIONS: List<Any> = listOf(Terapeuta(-1), Curso(-1), MiCarta(""), CartaFree(""))
+        val UP_DESTINATIONS: List<Any> = listOf(
+            Terapeuta(-1), Curso(-1), MiCarta(""),
+            CartaFree(""), Cartas("", false)
+        )
         val TOP_ACCIONS_DESTINATIONS: List<Any> = emptyList<Any>()//listOf(/*MiCarta(""), CartaFree("")*/)
     }
 

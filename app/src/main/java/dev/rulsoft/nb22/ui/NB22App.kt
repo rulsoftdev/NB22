@@ -19,10 +19,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.stringResource
 import dev.rulsoft.nb22.R
-import dev.rulsoft.nb22.core.navigation.Navigation
-import dev.rulsoft.nb22.core.navigation.composable.AppBarIcon
-import dev.rulsoft.nb22.core.navigation.composable.AppBottomNavigation
-import dev.rulsoft.nb22.presentation.carta.holder.rememberPreCartaStateHolder
+import dev.rulsoft.nb22.presentation.navigation.Navigation
+import dev.rulsoft.nb22.presentation.navigation.composable.AppBarIcon
+import dev.rulsoft.nb22.presentation.navigation.composable.AppBottomNavigation
 import dev.rulsoft.nb22.ui.theme.NB22Theme
 
 
