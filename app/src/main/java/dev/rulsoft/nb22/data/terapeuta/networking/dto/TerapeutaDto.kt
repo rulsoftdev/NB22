@@ -1,6 +1,6 @@
 package dev.rulsoft.nb22.data.terapeuta.networking.dto
 
-import dev.rulsoft.nb22.common.data.networking.serializers.DateSerializer
+import dev.rulsoft.nb22.data.common.networking.serializers.DateSerializer
 import dev.rulsoft.nb22.data.carta.networking.dto.CartaDto
 import kotlinx.serialization.Serializable
 import java.util.Date

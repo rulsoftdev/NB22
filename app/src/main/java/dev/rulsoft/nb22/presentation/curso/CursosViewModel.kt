@@ -4,8 +4,8 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.viewModelScope
-import dev.rulsoft.nb22.common.logger.CrashlyticsLogger
-import dev.rulsoft.nb22.common.presentation.NB22ViewModel
+import dev.rulsoft.nb22.core.logger.CrashlyticsLogger
+import dev.rulsoft.nb22.presentation.common.NB22ViewModel
 import dev.rulsoft.nb22.domain.curso.CursoRemoteRepository
 import dev.rulsoft.nb22.presentation.curso.models.toCursoUi
 import kotlinx.coroutines.launch

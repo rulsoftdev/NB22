@@ -5,8 +5,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
-import dev.rulsoft.nb22.common.logger.CrashlyticsLogger
-import dev.rulsoft.nb22.common.presentation.NB22ViewModel
+import dev.rulsoft.nb22.core.logger.CrashlyticsLogger
+import dev.rulsoft.nb22.presentation.common.NB22ViewModel
 import dev.rulsoft.nb22.domain.numero.NumeroRemoteRepository
 import dev.rulsoft.nb22.presentation.carta.composable.calculaAnyo
 import dev.rulsoft.nb22.presentation.carta.composable.reduceValor
