@@ -1,4 +1,5 @@
 pluginManagement {
+    includeBuild("build-logic")
     repositories {
         google {
             content {
@@ -20,5 +21,11 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "NB22"
+
 include(":app")
- 
+include(":domain")
+include(":core")
+include(":core-android")
+include(":data")
+include(":data-android")
+include(":presentation")
