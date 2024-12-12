@@ -26,6 +26,17 @@ android {
             buildConfigField("String", "URI_PLAYSTORE", "\"https://play.google.com/store/apps/details?id=org.rulsoft.cristalpedia\"")
         }
     }
+    flavorDimensions += listOf("version")
+    productFlavors {
+        create("free") {
+            dimension = "version"
+            buildConfigField("String", "APP_VARIANT", "\"free\"")
+        }
+        create("pro") {
+            dimension = "version"
+            buildConfigField("String", "APP_VARIANT", "\"pro\"")
+        }
+    }
 }
 dependencies {
     implementation(project(":domain"))

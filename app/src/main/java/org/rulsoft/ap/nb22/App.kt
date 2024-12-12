@@ -22,9 +22,6 @@ class App : Application() {
         FirebaseApp.initializeApp(this)
         FirebaseCrashlytics.getInstance().isCrashlyticsCollectionEnabled = true
 
-        // Inicializar la variante de la aplicación
-        AppVariant.current = BuildConfig.APP_VARIANT
-
         startKoin {
             //androidLogger(Level.DEBUG) // Esto imprime más información sobre la resolución de dependencias
             androidContext(this@App)

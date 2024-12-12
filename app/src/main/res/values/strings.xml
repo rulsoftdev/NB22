@@ -1,6 +1,4 @@
 <resources>
-    <string name="app_name">NB22</string>
-
     <!-- Errores -->
     <string name="generic_error">Error genérico</string>
     <string name="errors_no_cuentas_google">Es necesario tener al menos una cuenta de google en el terminal</string>

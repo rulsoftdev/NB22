@@ -1,6 +1,7 @@
 package org.rulsoft.ap.nb22.presentation.home
 
 import android.util.Log
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -14,6 +15,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
@@ -35,7 +37,7 @@ fun HomeScreen(
     val cursoUIState = vm.state
     val terapuetaUIState = vmTerapeuta.state
 
-    Log.d("HomeScreen", "Variant: ${AppVariant.current}")
+    Log.d("HomeScreenFree", "Variant: ${AppVariant.current}")
 
     Column(
         modifier = Modifier
@@ -51,7 +53,8 @@ fun HomeScreen(
                         modifier = Modifier
                             .padding(vertical = 16.dp),
                         text = "Bienvenid@",
-                        style = MaterialTheme.typography.headlineSmall
+                        style = MaterialTheme.typography.headlineSmall,
+                        color = Color.Blue
                     )
                 }
             }

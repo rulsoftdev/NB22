@@ -30,7 +30,7 @@ android {
             applicationIdSuffix = ".free"
             versionCode = 15
             versionName = "${defaultConfig.versionName}-free-${defaultConfig.versionCode}"
-            addManifestPlaceholders(mapOf("providerName" to "org.rulsoft.ap.nb22.provider"))
+            addManifestPlaceholders(mapOf("providerName" to "org.rulsoft.ap.nb22.free.provider"))
             resValue("string", "APP_NAME", "NB22")
             buildConfigField("String", "APP_VARIANT", "\"free\"")
         }
