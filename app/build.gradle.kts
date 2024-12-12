@@ -30,14 +30,18 @@ android {
             applicationIdSuffix = ".free"
             versionCode = 15
             versionName = "${defaultConfig.versionName}-free-${defaultConfig.versionCode}"
+            addManifestPlaceholders(mapOf("providerName" to "org.rulsoft.ap.nb22.provider"))
             resValue("string", "APP_NAME", "NB22")
+            buildConfigField("String", "APP_VARIANT", "\"free\"")
         }
         create("pro") {
             dimension = "version"
             applicationIdSuffix = ".pro"
             versionCode = 1
             versionName = "${defaultConfig.versionName}-pro-${defaultConfig.versionCode}"
+            addManifestPlaceholders(mapOf("providerName" to "org.rulsoft.ap.nb22.pro.provider"))
             resValue("string", "APP_NAME", "NB22 Profesional")
+            buildConfigField("String", "APP_VARIANT", "\"pro\"")
         }
     }
     buildTypes {

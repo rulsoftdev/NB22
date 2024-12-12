@@ -1,5 +1,6 @@
 package org.rulsoft.ap.nb22.presentation.home
 
+import android.util.Log
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -17,6 +18,7 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import org.koin.androidx.compose.koinViewModel
+import org.rulsoft.ap.nb22.presentation.AppVariant
 import org.rulsoft.ap.nb22.presentation.R
 import org.rulsoft.ap.nb22.presentation.curso.CursosViewModel
 import org.rulsoft.ap.nb22.presentation.curso.composable.CursoCard
@@ -32,6 +34,8 @@ fun HomeScreen(
     val vmTerapeuta: TerapeutasViewModel = koinViewModel()
     val cursoUIState = vm.state
     val terapuetaUIState = vmTerapeuta.state
+
+    Log.d("HomeScreen", "Variant: ${AppVariant.current}")
 
     Column(
         modifier = Modifier
