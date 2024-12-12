@@ -11,7 +11,7 @@ import java.util.Date
 import java.util.Locale
 
 object DateSerializer : KSerializer<Date> {
-    val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+    private val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH)
 
     override val descriptor: SerialDescriptor =
         PrimitiveSerialDescriptor("Date", PrimitiveKind.STRING)

@@ -24,7 +24,7 @@ class UserCheckAndLoadCartasUseCase(
         data class Error(val message: String) : Result()
     }
 
-    suspend fun invoke(email: String, recordarEmail: Boolean = false): Result {
+    suspend operator fun invoke(email: String, recordarEmail: Boolean = false): Result {
         // Paso 1: Comprobar si el usuario existe en el servidor remoto
         val usuarioResponse = usuarioRemoteRepository.findUsuarioByEmail(email)
         if (usuarioResponse is Either.Left) {

@@ -13,6 +13,7 @@ import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.unit.dp
 
 @Composable
+// Composable que representa el botón flotante
 fun FilterFab(
     state: FilterFabState,
     rotation:Float,

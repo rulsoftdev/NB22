@@ -11,6 +11,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
+// Composable encargado de representar la etiqueta de una opcion del FAB
 fun FilterFabMenuLabel(
     label: String,
     modifier: Modifier = Modifier

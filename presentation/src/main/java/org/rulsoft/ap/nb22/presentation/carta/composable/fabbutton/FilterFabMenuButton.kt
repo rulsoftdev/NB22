@@ -12,6 +12,7 @@ import androidx.compose.ui.unit.dp
 import org.rulsoft.ap.nb22.presentation.carta.composable.fabbutton.FilterFabItem
 
 @Composable
+// Composable encargado de representar un boton de tipo filter en el menu FAB
 fun FilterFabMenuButton(
     item: FilterFabItem,
     onClick: (FilterFabItem) -> Unit,

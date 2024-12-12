@@ -21,7 +21,7 @@ class CursosViewModel(
         private set
 
     init{
-        viewModelScope.launch {
+        launchCatching {
             state = state.copy(
                 isLoading = true
             )

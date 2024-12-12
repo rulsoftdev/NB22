@@ -46,18 +46,13 @@ fun TransparentTextField(
     colorEnabled: Boolean = false
 ) {
     var isError by rememberSaveable { mutableStateOf(false) }
-    var isFocusActive by rememberSaveable { mutableStateOf(false) }
     var error by rememberSaveable { mutableStateOf("") }
     var label = textLabel
     var fieldValue = remember { mutableStateOf("") }
 
     LaunchedEffect(key1 = textFieldValue) {
-        //if (textFieldValue.isNotEmpty()) {
-            fieldValue.value = textFieldValue
-        //}
+        fieldValue.value = textFieldValue
     }
-    // Log.d("TransparentTextField", "fieldValue($textLabel): ${fieldValue.value}")
-
     fun validateIsRequired(text: String): Boolean {
         error = "El campo $textLabel es obligatorio"
         return text.isEmpty()
@@ -74,21 +69,10 @@ fun TransparentTextField(
     }
 
     Column {
-        //TODO: Customizar los colores focus y unfocus
         TextField(
             modifier = modifier
                 .fillMaxWidth()
-                .height(56.dp)
-                /*.onFocusChanged {
-                    if (it.hasFocus) {
-                        isFocusActive = true
-                    }
-                    if (isFocusActive && !it.isFocused) {
-                        isFocusActive = false
-                        valida(fieldValue.value)
-                        onValueChange(fieldValue.value)
-                    }
-                }*/,
+                .height(56.dp),
             value = fieldValue.value.take(maxChar ?: 40),
             onValueChange = { newValue ->
                 fieldValue.value = newValue

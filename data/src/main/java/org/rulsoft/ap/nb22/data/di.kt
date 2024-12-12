@@ -1,9 +1,8 @@
 package org.rulsoft.ap.nb22.data
 
 import org.koin.dsl.module
-import org.rulsoft.ap.nb22.data.carta.networking.CartaRemoteDataRemoteRepository
+import org.rulsoft.ap.nb22.data.carta.networking.CartaRemoteDataRepository
 import org.rulsoft.ap.nb22.data.carta.networking.CartaServiceKtor
-import org.rulsoft.ap.nb22.data.common.networking.ApiClientKtor
 import org.rulsoft.ap.nb22.data.common.networking.BaseServiceKtor
 import org.rulsoft.ap.nb22.data.curso.networking.CursoRemoteDataRepository
 import org.rulsoft.ap.nb22.data.curso.networking.CursoServiceKtor
@@ -21,19 +20,18 @@ import org.rulsoft.ap.nb22.domain.usuario.UsuarioRemoteRepository
 
 val dataModule = module {
     // Ktor ApiClient
-    single { ApiClientKtor }
+    single<BaseServiceKtor> { BaseServiceKtor() }
 
-    single<BaseServiceKtor> { BaseServiceKtor(get()) }
     // Proveedores Remotos de API-Ktor
-    single<UsuarioServiceKtor> { UsuarioServiceKtor(get()) }
-    single<CartaServiceKtor> { CartaServiceKtor(get())}
-    single<CursoServiceKtor> { CursoServiceKtor(get()) }
-    single<NumeroServiceKtor> { NumeroServiceKtor(get()) }
-    single<TerapeutaServiceKtor> { TerapeutaServiceKtor(get()) }
+    single<UsuarioServiceKtor> { UsuarioServiceKtor() }
+    single<CartaServiceKtor> { CartaServiceKtor()}
+    single<CursoServiceKtor> { CursoServiceKtor() }
+    single<NumeroServiceKtor> { NumeroServiceKtor() }
+    single<TerapeutaServiceKtor> { TerapeutaServiceKtor() }
 
     // Proveemos los remote Repository
     single<UsuarioRemoteRepository> { UsuarioRemoteDataRepository(get()) }
-    single<CartaRemoteRepository> { CartaRemoteDataRemoteRepository(get()) }
+    single<CartaRemoteRepository> { CartaRemoteDataRepository(get()) }
     single<CursoRemoteRepository> { CursoRemoteDataRepository(get()) }
     single<NumeroRemoteRepository> { NumeroRemoteDataRepository(get()) }
     single<TerapeutaRepository> { TerapeutaRemoteDataRepository(get()) }

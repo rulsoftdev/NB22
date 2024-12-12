@@ -9,6 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
 @Composable
+// Composable que se encarga de pintar una opción del menú FAB
 fun FilterFabMenuItem(
     menuItem: FilterFabItem,
     onMenuItemClick: (FilterFabItem) -> Unit,

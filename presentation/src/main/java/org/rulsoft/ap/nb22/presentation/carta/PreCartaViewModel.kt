@@ -29,7 +29,7 @@ class PreCartaViewModel (
     val recordarEmail: StateFlow<Boolean> = _recordarEmail
 
     init {
-        viewModelScope.launch {
+        launchCatching {
             _state.value = PreCartaUIState.Loading
             val usuario = localUsuarioLocalRepository.findTheOneUser()
             if (usuario != null) {
@@ -46,9 +46,9 @@ class PreCartaViewModel (
     }
 
     fun saveUsuario(email: String, recordarEmail: Boolean = false){
-        viewModelScope.launch {
+        launchCatching {
             _state.value = PreCartaUIState.Loading // Indicamos que la carga está en progreso
-            val result = userCheckAndLoadCartaUseCase.invoke(email, recordarEmail)
+            val result = userCheckAndLoadCartaUseCase(email, recordarEmail)
 
             when (result) {
                 is UserCheckAndLoadCartasUseCase.Result.UserNotFound -> {

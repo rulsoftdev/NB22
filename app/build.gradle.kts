@@ -13,8 +13,6 @@ android {
 
     defaultConfig {
         applicationId = "org.rulsoft.ap.nb22"
-        versionCode = 14
-        versionName = "1.1.11"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -25,7 +23,23 @@ android {
     buildFeatures {
         buildConfig = true
     }
-
+    flavorDimensions += "version"
+    productFlavors {
+        create("free") {
+            dimension = "version"
+            applicationIdSuffix = ".free"
+            versionCode = 15
+            versionName = "${defaultConfig.versionName}-free-${defaultConfig.versionCode}"
+            resValue("string", "APP_NAME", "NB22")
+        }
+        create("pro") {
+            dimension = "version"
+            applicationIdSuffix = ".pro"
+            versionCode = 1
+            versionName = "${defaultConfig.versionName}-pro-${defaultConfig.versionCode}"
+            resValue("string", "APP_NAME", "NB22 Profesional")
+        }
+    }
     buildTypes {
         release {
             isDebuggable = false

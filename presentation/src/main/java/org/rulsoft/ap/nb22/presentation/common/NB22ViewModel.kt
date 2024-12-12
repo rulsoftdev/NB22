@@ -30,7 +30,7 @@ open class NB22ViewModel(private val crashlyticsLogger: CrashlyticsLogger) : Vie
     }
 
     fun launchCatching(snackbar: Boolean = true, block: suspend CoroutineScope.() -> Unit) =
-        viewModelScope.launch(
+        launchCatching(
             CoroutineExceptionHandler { _, throwable ->
                 if (snackbar) {
                     SnackbarManager.showMessage(throwable.toSnackbarMessage())
@@ -44,7 +44,7 @@ open class NB22ViewModel(private val crashlyticsLogger: CrashlyticsLogger) : Vie
         when(apiError){
             is HttpError -> {
                 Log.d("CristalpediaViewModel", "HttpError: $apiError")
-                viewModelScope.launch(exceptionHandler) {
+                launchCatching(exceptionHandler) {
                     errorChannel.send(
                         UiText.DynamicString(
                             "HttpError: $apiError"
@@ -54,7 +54,7 @@ open class NB22ViewModel(private val crashlyticsLogger: CrashlyticsLogger) : Vie
             }
             is NetworkError -> {
                 Log.d("CristalpediaViewModel", "Sin conexión a internet")
-                viewModelScope.launch(exceptionHandler) {
+                launchCatching(exceptionHandler) {
                     errorChannel.send(
                         UiText.StringResource(
                             resId = R.string.errors_no_hay_conexion,
@@ -65,7 +65,7 @@ open class NB22ViewModel(private val crashlyticsLogger: CrashlyticsLogger) : Vie
             }
             is UnknownApiError -> {
                 Log.d("CristalpediaViewModel", "Haremos un crashlitycs")
-                viewModelScope.launch(exceptionHandler) {
+                launchCatching(exceptionHandler) {
                     errorChannel.send(
                         UiText.DynamicString(
                             "No se ha procesado correctamente la petición"

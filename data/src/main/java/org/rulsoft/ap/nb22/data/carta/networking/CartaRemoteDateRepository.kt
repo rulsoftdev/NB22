@@ -12,7 +12,7 @@ import org.rulsoft.ap.nb22.domain.carta.CartaRemoteRepository
 import org.rulsoft.ap.nb22.domain.carta.model.CartaSimple
 
 
-class CartaRemoteDataRemoteRepository(private val cartaService: CartaServiceKtor):
+class CartaRemoteDataRepository(private val cartaService: CartaServiceKtor):
     BaseRemoteDataRepository(), CartaRemoteRepository {
 
     override suspend fun fetchCartas(): Either<ApiError, List<Carta>> {

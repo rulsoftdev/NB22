@@ -100,24 +100,6 @@ class NB22AppState(
         navController.navigatePoppingUpToStartDestination(navItem.navCommand)
     }
 
-    @OptIn(ExperimentalComposeApi::class)
-    fun onSendCapture(){
-        coroutineScope.launch {
-            try {
-                val bitmapAsync = captureController.captureAsync(Bitmap.Config.ARGB_8888).await()
-                // val bitmap = bitmapAsync
-                val context = navController.context
-                // This is captured bitmap of a content inside Capturable Composable.
-                Log.d("NB22AppState", "bitmap: $bitmapAsync")
-                //Bitmap is captured successfully. Do something with it!
-                //onResourceReady(context, bitmap.asAndroidBitmap())
-            } catch (error: Throwable) {
-                Log.e("NB22AppState", "error: $error")
-                // Error occurred. Handle it!
-            }
-        }
-    }
-
     @Composable
     fun getTitleScreen(): Int {
         val navItem = NavItem.entries.find { destination ->

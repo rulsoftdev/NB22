@@ -19,7 +19,7 @@ class App : Application() {
 
         // Inicialización de Firebase
         FirebaseApp.initializeApp(this)
-        FirebaseCrashlytics.getInstance().setCrashlyticsCollectionEnabled(true)
+        FirebaseCrashlytics.getInstance().isCrashlyticsCollectionEnabled = true
 
         startKoin {
             //androidLogger(Level.DEBUG) // Esto imprime más información sobre la resolución de dependencias

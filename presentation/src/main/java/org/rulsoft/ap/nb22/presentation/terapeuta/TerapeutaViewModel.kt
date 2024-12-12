@@ -24,7 +24,7 @@ class TerapeutaViewModel (
 
     init{
         val id = savedStateHandle.get<Int>("id")
-        viewModelScope.launch {
+        launchCatching {
             state = state.copy(
                 isLoading = true
             )

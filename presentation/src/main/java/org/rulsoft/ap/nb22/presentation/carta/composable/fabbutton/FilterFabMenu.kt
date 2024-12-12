@@ -18,13 +18,13 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 
 @Composable
+// Función para mostrar el FAB
 fun FilterFabMenu(
     visible: Boolean,
     items: List<FilterFabItem>,
     onClickAction: (String) -> Unit,
     modifier: Modifier = Modifier
 ) {
-    val context = LocalContext.current
     val enterTransition = remember {
         expandVertically(
             expandFrom = Alignment.Bottom,

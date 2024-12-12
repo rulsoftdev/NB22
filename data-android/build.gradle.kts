@@ -1,5 +1,3 @@
-import org.rulsoft.ap.nb22.libs
-
 plugins {
     id("rulsoft.android.library")
     id("rulsoft.android.room")
@@ -7,7 +5,6 @@ plugins {
 }
 android {
     namespace = "org.rulsoft.ap.nb22.data.android"
-
 }
 dependencies {
     implementation(project(":domain"))

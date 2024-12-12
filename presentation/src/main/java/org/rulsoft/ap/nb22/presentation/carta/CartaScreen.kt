@@ -45,7 +45,7 @@ import org.rulsoft.ap.nb22.presentation.BuildConfig
 import org.rulsoft.ap.nb22.presentation.R
 import org.rulsoft.ap.nb22.presentation.WindowSize
 import org.rulsoft.ap.nb22.presentation.carta.composable.CartaCanva
-import org.rulsoft.ap.nb22.presentation.carta.composable.FabCliente
+import org.rulsoft.ap.nb22.presentation.carta.composable.FabCarta
 import org.rulsoft.ap.nb22.presentation.carta.composable.fabbutton.FAB_SHARE
 import org.rulsoft.ap.nb22.presentation.carta.composable.fabbutton.FAB_SHOW_CARTAS
 import org.rulsoft.ap.nb22.presentation.common.composable.picker.ShowDatePicker
@@ -92,9 +92,7 @@ fun PintarCarta(
     val scope = rememberCoroutineScope()
     val snackbarHostState = remember { SnackbarHostState() }
     val onEvent = vm::onEvent
-    //val timeZone = TimeZone.getTimeZone("Europe/Madrid");
-    val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale("es", "ES"));
-    //dateFormat.timeZone = timeZone;
+    val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale("es", "ES"))
     var fechaState by remember(state.fecha) { mutableStateOf(if(state.fecha != null) dateFormat.format(state.fecha) else "") }
     var horaState by remember(state.hora) { mutableStateOf(if(state.hora != null) convertMinutesToHoursMinutes(state.hora!!) else "") }
     var selectedTabIndex by remember { mutableStateOf(0) }
@@ -122,24 +120,12 @@ fun PintarCarta(
             }
         }
     }
-    var showNotasDialog by remember { mutableStateOf(false) }
-    if(showNotasDialog) {
-        /*NotasDialog(
-            notasState,
-            setShowDialog = {
-                showNotasDialog = it
-            }
-        ){ notas ->
-            showNotasDialog = false
-            //onEvent(CartaUIEvent.NotasChanged(notas, ti))
-        }*/
-    }
 
     val (heightCanvas, valores) = vm.calcularValores(windowSize)
     val (extraYLinea2, extraYLinea6, incrementoTextPosition) = valores
     Scaffold(
         floatingActionButton = {
-            FabCliente(onAction = { action ->
+            FabCarta(onAction = { action ->
                 when(action) {
                     FAB_SHARE -> {
                         scope.launch {

@@ -14,6 +14,7 @@ android {
     buildFeatures {
         buildConfig = true
     }
+
     buildTypes {
         release {
             buildConfigField("String", "BASE_URL", "\"https://ovhcontrol.rulsoft.org/api.academian22/\"")

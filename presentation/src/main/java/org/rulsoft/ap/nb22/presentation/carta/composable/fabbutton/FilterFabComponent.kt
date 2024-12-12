@@ -21,6 +21,7 @@ import androidx.compose.ui.unit.dp
 
 @SuppressLint("UnusedTransitionTargetStateParameter")
 @Composable
+// Composable que representa el boton flotante que permite ver todas las acciones que podemos realizar
 fun FilterFabComponent(
     items: List<FilterFabItem>,
     onClickAction: (String) -> Unit,

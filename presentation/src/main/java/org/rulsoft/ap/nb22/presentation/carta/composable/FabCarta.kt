@@ -11,7 +11,7 @@ import org.rulsoft.ap.nb22.presentation.carta.composable.fabbutton.FilterFabComp
 import org.rulsoft.ap.nb22.presentation.carta.composable.fabbutton.FilterFabItem
 
 @Composable
-fun FabCliente(
+fun FabCarta(
     onAction: (String) -> Unit,
 ) {
     FilterFabComponent(

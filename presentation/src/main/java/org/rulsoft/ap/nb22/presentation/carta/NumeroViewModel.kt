@@ -40,7 +40,7 @@ class NumeroViewModel (
         val padre: Int = calculaAnyo(anyo)
         val pp: Int = sumaPilares(listOf(madre, yo, padre))
         if (fecha.isNotEmpty()) {
-            viewModelScope.launch {
+            launchCatching {
                 numeroRemoteRepository.fetchResumenFreeById(pp).fold(
                     ifLeft = { apiError ->
                         parseError(apiError)

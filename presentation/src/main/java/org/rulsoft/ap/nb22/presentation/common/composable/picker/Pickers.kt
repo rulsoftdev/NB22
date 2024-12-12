@@ -33,12 +33,7 @@ fun ShowDatePicker(
     isMostrarEdadValue: Boolean = false,
     modifier: Modifier = Modifier
 ){
-    // println(textFieldValue.value)
-   // val timeZone = TimeZone.getTimeZone("Europe/Madrid");
     val sdfShort = SimpleDateFormat("dd/MM/yyyy", Locale("es", "ES"));
-   // sdfShort.timeZone = timeZone;
-    //val sdfFull = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.000Z", Locale("es", "ES"));
-    //sdfFull.timeZone = timeZone;
     var year: Int
     var month: Int
     var day : Int
@@ -74,7 +69,6 @@ fun ShowDatePicker(
     calendarMin.time = sdfShort.parse("01/01/1000")!!
     datePickerDialog.datePicker.minDate = calendarMin.timeInMillis
 
-    // Text(text = "Selected Date: ${date.value}")
     TransparentTextField(
         modifier = modifier.clickable {
             if (!isReadOnly) {
@@ -85,9 +79,6 @@ fun ShowDatePicker(
         textLabel = label,
         keyboardType = KeyboardType.Text,
         keyboardActions = KeyboardActions(
-            /*onNext = {
-                focusManager.moveFocus(FocusDirection.Down)
-            }*/
         ),
         imeAction = ImeAction.Next,
         onValueChange = {

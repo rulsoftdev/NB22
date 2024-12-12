@@ -10,13 +10,13 @@ abstract class BaseRemoteDataRepository {
     protected inline fun <T, R> handleResponse(
         response: Response<T>,
         transform: (T) -> R
-    ): Either<org.rulsoft.ap.nb22.core.ApiError, R> {
+    ): Either<ApiError, R> {
         return if (response.isSuccessful) {
             response.data?.let { Either.Right(transform(it)) }
-                ?: Either.Left(org.rulsoft.ap.nb22.core.HttpError(204, "Response body is null"))
+                ?: Either.Left(HttpError(204, "Response body is null"))
         } else {
             Either.Left(
-                org.rulsoft.ap.nb22.core.HttpError(
+                HttpError(
                     response.statusCode,
                     response.errorBody ?: "Unknown error"
                 )

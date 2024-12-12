@@ -38,7 +38,6 @@ class CartaViewModel (
     var state by mutableStateOf(CartaUIState())
         private set
 
-    // val cartaCalculosState: State<CartaCalculosState> = _cartaCalculosState
     private var _repeticionesNumeros: HashMap<Int, Int> = hashMapOf()
 
     init {
@@ -50,7 +49,7 @@ class CartaViewModel (
             // Log.d("CartaViewModel", "showLista: $showLista")
             var email: String = savedStateHandle.get<String>("email") ?: ""
             if (email.isNotBlank()) {
-                viewModelScope.launch {
+                launchCatching {
                     if (showLista) {
                         getCartasList(email)
                     } else {
@@ -63,7 +62,6 @@ class CartaViewModel (
 
     fun onEvent(event: CartaUIEvent) {
         when (event) {
-            // is CartaUIEvent.OnSelectedCarta -> onSelectedCarta(event.id)
             is CartaUIEvent.OnChangedCartaFijada -> onChangedCartaFijada(event.id)
             is CartaUIEvent.OnPaintPilar -> onPaintPilar(event.nombre, event.pilar, event.tipoCarta)
             is CartaUIEvent.OnClickCarta -> onClickCarta(event.punto, event.tipoCarta)
@@ -84,7 +82,7 @@ class CartaViewModel (
                 processing = true,
                 error = null,
             )
-            viewModelScope.launch {
+            launchCatching {
                 cartaRemoteRepository.findCartasByEmail(email).fold(
                     ifLeft = { apiError ->
                         parseError(apiError)
@@ -141,7 +139,7 @@ class CartaViewModel (
             processing = true,
             error = null,
         )
-        viewModelScope.launch {
+        launchCatching {
             cartaRemoteRepository.fetchCartaById(id).fold(
                 ifLeft = { apiError ->
                     parseError(apiError)
@@ -193,14 +191,13 @@ class CartaViewModel (
         }
     }
 
-
     private fun getCartasList(email: String){
         Log.d("CartaViewModel", "Cargamos las cartas del email: $email")
         state = state.copy(
             processing = true,
             error = null,
         )
-        viewModelScope.launch {
+        launchCatching {
             cartaRemoteRepository.findCartasSimplesByEmail(email).fold(
                 ifLeft = { apiError ->
                     parseError(apiError)
@@ -231,7 +228,6 @@ class CartaViewModel (
             )
         }
     }
-
 
     private fun onLongClickCarta(punto: Punto, tipoCarta: TipoCarta) {
         var longClick = false
@@ -342,7 +338,7 @@ class CartaViewModel (
 
     //TODO: descomentar cuando se añada el listado de cartas, si se requiere
     private fun onChangedCartaFijada(id: Int){
-        viewModelScope.launch {
+        launchCatching {
             val carta = cartaRemoteRepository.updateCarta(id, true)
             Log.d("CartaViewModel", "Carta actualizada: $carta")
         }
@@ -378,38 +374,6 @@ class CartaViewModel (
             i++
         }
         return dentro
-    }
-
-    /*private fun onSelectedCarta(id: Int){
-        viewModelScope.launch {
-            /*cartaRepository.getCarta(id)
-                .catch { ex ->
-                    state = CartaState(error = ex.message)
-                }
-                .collect { carta ->
-                    state = CartaState(
-                        cartaSelected = carta,
-                        id = carta.id,
-                        fecha = carta.fecha,
-                        hora = carta.hora,
-                        alias = carta.alias,
-                        notas = carta.notas,
-                        urlImage = carta.urlImage
-                    )
-                }*/
-        }
-    }*/
-
-
-    private fun getNumeroMaxRepeticiones(): Int {
-        val result = _repeticionesNumeros.toList().sortedBy { (_, value) -> value}.toMap()
-        val lastKey = result.keys.last()
-        val keys = result.keys.toList()
-        val prevLastKey = keys[keys.size-2]
-        return  if(result[lastKey]!! > result[prevLastKey]!!)
-            result.keys.last()
-        else
-            0
     }
 
     private fun actualizaRepeticiones(valor: Int) {
@@ -460,11 +424,6 @@ class CartaViewModel (
             }
         }
 
-        // logService.logEvent("actualizarPilares", mapLogs)
-        // Loguear un error simulado al final para pruebas (opcional, puede eliminarse).
-        // logService.logException(RuntimeException("Prueba de excepción: Error simulado en actualizarPilares"))
-        // logService.checkUnsentReports()
-        // throw RuntimeException("Prueba Runtime")
         return pilaresActualizados
     }
 
